@@ -32,8 +32,9 @@ class App extends Component {
             email={comentario.email} 
             data={comentario.data}>
             {comentario.mensagem}
-          </Comentario>  
+          </Comentario>
         ))}
+        <button> Adicionar um Comentario </button>
       </div>
     );
   }
