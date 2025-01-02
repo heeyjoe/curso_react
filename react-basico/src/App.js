@@ -9,13 +9,13 @@ class App extends Component {
       {
         nome: 'João',
         email: 'joao@email.com',
-        data: new Date(2020, 3, 19),
+        data: new Date(2020, 3, 19, 17, 30, 0),
         mensagem: 'Olá mundo'
       },
       { 
         nome: 'Maria',
         email: 'maria@email.com',
-        data: new Date(2020, 3, 25),
+        data: new Date(2020, 3, 25, 18, 12, 45),
         mensagem: 'Olá mundo novo'
       },
     ],
@@ -61,7 +61,7 @@ class App extends Component {
           </Comentario>
         ))}
         
-        <form method='post' onSubmit={this.adicionarComentario}>
+        <form method='post' onSubmit={this.adicionarComentario} className='Novo-Comentario'>
           <h2>Adicionar Comentário</h2>
           <div>
             <input 

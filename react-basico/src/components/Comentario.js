@@ -1,13 +1,26 @@
 import React from 'react';
+import { formatRelative } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+
 import './Comentario.css'
+import imagemUsuario from './user.png'
 
 const Comentario = props =>{
+  //const estilo = {
+  //  color: 'red',
+  //  padding: '10px',
+  //  fontSize: '30px'
+  //}
+
   return <div className='Comentario'>
-    <h2>{props.nome}</h2>
-    <p>{props.email}</p>
-    <p>{props.children}</p>
-    <p>{props.data.toString()}</p>
-    <button onClick={props.onRemove}>&times;</button>
+    <img class="avatar" src={imagemUsuario} alt={props.nome}></img>
+    <div class="conteudo">
+      <h2 class="nome">{props.nome}</h2>
+      <p class="email">{props.email}</p>
+      <p class="mensagem">{props.children}</p>
+      <p class="data">{formatRelative(props.data, new Date(), { locale: ptBR })}</p>
+      <button onClick={props.onRemove}>&times;</button>
+    </div>
   </div>
 };
 
